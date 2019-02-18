@@ -2,7 +2,7 @@
 
 class DB
 {
-    protected $pdo;
+    protected $dbh;
 
     public function __construct(string $configPath)
     {
@@ -16,6 +16,13 @@ class DB
         $dsn1 = implode(':', [$config['dbType'], $dbHost, $config['dbPort']]);
         $dsn = implode(';', [$dsn1, $dbName]);
 
-        $this->pdo = new PDO($dsn, $dbUserName, $dbPassword);
+        $this->dbh = new PDO($dsn, $dbUserName, $dbPassword);
+    }
+
+    public function execute(string $sql):bool
+    {
+        $sth = $this->dbh->prepare($sql);
+
+        return $sth->execute();
     }
 }
