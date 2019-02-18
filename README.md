@@ -16,6 +16,7 @@
 * для задачи 3 решение находится в папке `03_news`
 
 ## Main functionality
+* uses MySQL database
 * classes and objects
 * view separation
 * uses output buffer
