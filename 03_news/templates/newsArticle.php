@@ -16,7 +16,7 @@
     <body>
     <p></p>
     <div class="container">
-        <h1><?php echo $article->getShortText(); ?></h1>
+        <h1><?php echo $article->getTitle(); ?></h1>
         <div class="row">
             <div class="col">
                 <?php echo $article->getFullText(); ?>

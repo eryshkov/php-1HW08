@@ -1,19 +1,21 @@
 <?php
 
-require_once __DIR__ . '/classes/News.php';
+require_once __DIR__ . '/classes/Article.php';
 require_once __DIR__ . '/../classes/View.php';
+require_once __DIR__ . '/../classes/DB.php';
 
-$news = new News(__DIR__ . '/news.txt');
 
-$articleNumber = $_GET['id'];
-$newsArticles = $news->getNews();
+if (isset($_GET['id'])) {
+    $articleNumber = $_GET['id'];
 
-if (isset($newsArticles[$articleNumber])) {
-    $article = $newsArticles[$articleNumber];
+    $db = new DB(__DIR__ . '/../config.php');
+    $data = $db->query('SELECT * FROM news WHERE id=:id', [':id'=>$articleNumber]);
 
-    $view = new View();
-    $view->assign('article', $article);
-
-    $view->display(__DIR__ . '/templates/newsArticle.php');
+    if (false !== $data) {
+        $article = new Article($data[0]['id'], $data[0]['author'], $data[0]['title'], $data[0]['text']);
+        $view = new View();
+        $view->assign('article', $article);
+        $view->display(__DIR__ . '/templates/newsArticle.php');
+    }
 }
 
