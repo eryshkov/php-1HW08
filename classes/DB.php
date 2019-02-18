@@ -26,6 +26,12 @@ class DB
         return $sth->execute();
     }
 
+
+    /**
+     * @param string $sql
+     * @param array $data
+     * @return array|bool
+     */
     public function query(string $sql, array $data)
     {
         $sth = $this->dbh->prepare($sql);
