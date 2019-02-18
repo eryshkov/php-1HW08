@@ -3,7 +3,7 @@ require_once __DIR__ . '/classes/DB.php';
 
 $db = new DB(__DIR__ . '/config.php');
 
-$sql = 'SELECT * FROM personsa';
+$sql = 'SELECT * FROM persons';
 
 $result = $db->execute($sql);
 var_dump($result);

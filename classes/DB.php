@@ -25,4 +25,17 @@ class DB
 
         return $sth->execute();
     }
+
+    public function query(string $sql, array $data)
+    {
+        $sth = $this->dbh->prepare($sql);
+
+        $result = $sth->execute($data);
+
+        if ($result) {
+            return $sth->fetchAll();
+        }else{
+            return false;
+        }
+    }
 }
