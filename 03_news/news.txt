@@ -1,0 +1,4 @@
+My news 1 short text|*|My news 1 full text. My news 1 full text.
+My news 2 short text|*|My news 2 full text. My news 2 full text.
+My news 3 short text|*|My news 3 full text. My news 3 full text.
+My news 4 short text|*|My news 4 full text. My news 4 full text.
