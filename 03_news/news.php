@@ -5,7 +5,7 @@ require_once __DIR__ . '/../classes/DB.php';
 require_once __DIR__ . '/classes/Article.php';
 
 
-$db = new DB(__DIR__ . '/../config.php');
+$db = new DB();
 $data = $db->query('SELECT * FROM news ORDER BY id DESC', []);
 
 $articles = [];
