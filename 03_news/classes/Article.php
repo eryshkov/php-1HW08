@@ -2,10 +2,10 @@
 
 class Article
 {
-    protected $id;
-    protected $author;
-    protected $fullText;
-    protected $title;
+    protected $id = 0;
+    protected $author = '';
+    protected $fullText = '';
+    protected $title = '';
 
     public function __construct(int $id, string $author, string $shortText, string $fullText)
     {
