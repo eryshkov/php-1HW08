@@ -1,7 +1,7 @@
 <?php
 require_once __DIR__ . '/classes/DB.php';
 
-$db = new DB(__DIR__ . '/config.php');
+$db = new DB();
 
 assert(true === $db->execute('SELECT * FROM persons WHERE id=1'));
 assert(false === $db->execute('SELECT * FROM persons WHERE idd=1'));

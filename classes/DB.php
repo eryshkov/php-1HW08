@@ -29,7 +29,7 @@ class DB
      * @param array $data
      * @return array|bool
      */
-    public function query(string $sql, array $data)
+    public function query(string $sql, array $data): array
     {
         $sth = $this->dbh->prepare($sql);
 
