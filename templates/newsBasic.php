@@ -21,7 +21,7 @@
         ?>
         <div class="row">
             <div class="col">
-                <a href="<?php echo '/03_news/article.php?id=' . $article->getId(); ?>">
+                <a href="<?php echo '/article.php?id=' . $article->getId(); ?>">
                     News <?php echo $article->getId(); ?></a>
                 <div class="row">
                     <div class="col">

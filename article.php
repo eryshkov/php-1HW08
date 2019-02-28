@@ -1,14 +1,14 @@
 <?php
 
 require_once __DIR__ . '/classes/Article.php';
-require_once __DIR__ . '/../classes/View.php';
-require_once __DIR__ . '/../classes/DB.php';
+require_once __DIR__ . '/classes/View.php';
+require_once __DIR__ . '/classes/DB.php';
 
 
 if (isset($_GET['id'])) {
     $articleNumber = $_GET['id'];
 
-    $db = new DB(__DIR__ . '/../config.php');
+    $db = new DB(__DIR__ . '/config.php');
     $data = $db->query('SELECT * FROM news WHERE id=:id', [':id'=>$articleNumber]);
 
     if (false !== $data) {

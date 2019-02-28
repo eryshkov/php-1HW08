@@ -13,7 +13,7 @@ class DB
 
         $dsn = $config['dbDriver'] . ':host=' . $config['dbHost'] . ';port=' . $config['dbPort'] . ';dbname=' . $config['dbName'];
 
-        $this->dbh = new \PDO($dsn, $dbUserName, $dbPassword);
+        $this->dbh = new PDO($dsn, $dbUserName, $dbPassword);
     }
 
     public function execute(string $sql):bool
