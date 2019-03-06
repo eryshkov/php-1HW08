@@ -14,6 +14,7 @@ class Article
         $this->title = $shortText;
         $this->fullText = $fullText;
     }
+
     public function getId(): int
     {
         return $this->id;
@@ -24,12 +25,12 @@ class Article
         return $this->author;
     }
 
-    public function getTitle():string
+    public function getTitle(): string
     {
         return $this->title;
     }
 
-    public function getFullText():string
+    public function getFullText(): string
     {
         return $this->fullText;
     }

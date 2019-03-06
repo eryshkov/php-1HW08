@@ -16,7 +16,7 @@ class DB
         $this->dbh = new PDO($dsn, $dbUserName, $dbPassword);
     }
 
-    public function execute(string $sql):bool
+    public function execute(string $sql): bool
     {
         $sth = $this->dbh->prepare($sql);
 
@@ -37,7 +37,7 @@ class DB
 
         if ($result) {
             return $sth->fetchAll();
-        }else{
+        } else {
             return false;
         }
     }
