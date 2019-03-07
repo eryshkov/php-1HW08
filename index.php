@@ -1,19 +1,9 @@
 <?php
+require __DIR__ . '/classes/View.php';
+require __DIR__ . '/classes/News.php';
 
-require_once __DIR__ . '/classes/View.php';
-require_once __DIR__ . '/classes/DB.php';
-require_once __DIR__ . '/classes/Article.php';
-
-
-$db = new DB();
-$data = $db->query('SELECT * FROM news ORDER BY id DESC', []);
-
-$articles = [];
-
-foreach ($data as $dataChunk) {
-    $article = new Article($dataChunk['id'], $dataChunk['author'], $dataChunk['title'], $dataChunk['text']);
-    $articles[] = $article;
-}
+$news = new News();
+$articles = $news->getAllArticles();
 
 $view = new View();
 $view->assign('articles', $articles);
