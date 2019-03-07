@@ -16,17 +16,39 @@
 <body>
 <p></p>
 <div class="container">
-    <h1><?php echo $article->getTitle(); ?></h1>
-    <div class="row">
-        <div class="col">
-            <?php echo $article->getFullText(); ?>
+    <?php if (isset($article)) {
+        ?>
+        <div class="row">
+            <div class="col">
+                <h1><?php echo $article->getTitle(); ?></h1>
+            </div>
         </div>
-    </div>
-    <div class="row">
-        <div class="col">
-            <strong>Author is&nbsp<?php echo $article->getAuthor(); ?></strong>
+        <div class="row">
+            <div class="col">
+                <blockquote class="blockquote">
+                    <p class="mb-0"><?php echo $article->getFullText(); ?></p>
+                    <footer class="blockquote-footer">Author
+                        is&nbsp<strong><?php echo $article->getAuthor(); ?></strong></footer>
+                </blockquote>
+            </div>
         </div>
-    </div>
+        <?php
+    } else {
+        ?>
+        <div class="row">
+            <div class="col-auto">
+                <div class="alert alert-danger" role="alert">
+                    Новость не найдена
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col">
+                <a href="/">Вернуться на главную</a>
+            </div>
+        </div>
+        <?php
+    } ?>
 </div>
 </body>
 </html>
