@@ -16,13 +16,13 @@
 <body>
 <p></p>
 <div class="container">
-    <h1>News</h1>
+    <h1>Новости</h1>
     <?php foreach ($articles as $article) {
         ?>
         <div class="row">
             <div class="col">
                 <a href="<?php echo '/article.php?id=' . $article->getId(); ?>">
-                    News <?php echo $article->getId(); ?></a>
+                    Новость <?php echo $article->getId(); ?></a>
                 <div class="row">
                     <div class="col">
                         <?php echo $article->getTitle(); ?>
