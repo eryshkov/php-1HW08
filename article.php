@@ -3,6 +3,7 @@ require __DIR__ . '/classes/News.php';
 require __DIR__ . '/classes/View.php';
 
 if (!isset($_GET['id'])) {
+    header('Location: ' . '/');
     exit();
 }
 
