@@ -6,10 +6,8 @@ if (!isset($_GET['id'])) {
     exit();
 }
 
-$articleNumber = $_GET['id'];
-
 $news = new News();
-$article = $news->getOneArticle($articleNumber);
+$article = $news->getOneArticle($_GET['id']);
 
 $view = new View();
 $view->assign('article', $article);
